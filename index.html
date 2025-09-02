@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certificate Generator with Flight Background</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Welcome to Certificate Generator Application</h1>
+        
+      </header>
+
+      <div class="input-section">
+        <div class="input-group">
+          <label for="name-input">Enter Name for Certificate:</label>
+          <input
+            type="text"
+            id="name-input"
+            placeholder="Enter participant's name"
+          />
+        </div>
+        <div class="buttons">
+          <button id="generate-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"
+              />
+              <line x1="16" y1="5" x2="22" y2="5" />
+              <line x1="19" y1="2" x2="19" y2="8" />
+              <circle cx="9" cy="9" r="2" />
+              <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
+            </svg>
+            Generate Certificate
+          </button>
+          <button id="download-btn" class="download-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            Download PDF
+          </button>
+          <button id="reset-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="44"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="1 4 1 10 7 10" />
+              <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+            </svg>
+            Reset
+          </button>
+        </div>
+      </div>
+
+      <div class="certificate-container" id="certificate">
+        <div class="certificate">
+          <!-- Flight Image Background -->
+          <div class="flight-background">
+            <div class="flight-diagram">
+              <div class="measurement-line">
+                <div class="measurement-marker marker-0"></div>
+                <div class="measurement-marker marker-1"></div>
+                <div class="measurement-marker marker-2"></div>
+                <div class="measurement-marker marker-3"></div>
+                <div class="measurement-marker marker-4"></div>
+
+                <div class="measurement-label label-0"></div>
+                <div class="measurement-label label-1">4cm</div>
+                <div class="measurement-label label-2">0</div>
+                <div class="measurement-label label-3">1.00m</div>
+                <div class="measurement-label label-4"></div>
+              </div>
+
+              <div class="dimension-labels">
+                <div class="dimension-label">A/cm</div>
+                <div class="dimension-label">B/cm</div>
+                <div class="dimension-label">C/cm</div>
+                <div class="dimension-label">D/cm</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="certificate-content">
+            <div class="logo-setup">
+              <div style="height: 100px">
+                <img
+                  height="75%"
+                  width="130px"
+                  src="hal-logo.png"
+                  alt="hal-logo"
+                />
+              </div>
+              <h1> CERTIFICATE</h1>
+              <div style="height: 100px;">
+                <img
+                  height="90%"
+                  width="90px"
+                  src="wps-logo.png"
+                  alt="wips-logo"
+                />
+                
+                <img
+                  height="100%"
+                  width="50px"
+                  src="fwa-logo.png"
+                  alt="fwa-logo"
+                />
+              </div>
+            </div>
+            
+            <h3>of Participation</h3>
+
+            <p style="font-weight: bold; color: rgb(28, 65, 65); font-size: 30px;">This Certificate is awarded to</p>
+
+            <div id="certificate-name" class="name">Participant Name</div>
+
+            <p style="font-weight: bold; color: rgb(28, 65, 65); font-size: 23px;">for attending National Conference for Women with the theme</p>
+
+            
+
+            <p style="color:#AE0000; font-size: 30px;">
+              <i style="color: black;font-size: 50px; font-family: Snell Roundhand, 'URW Chancery L', cursive; font-weight: bold;">Tejasvi</i>-<i style="font-family: Snell Roundhand, 'URW Chancery L', cursive; font-size: 35px; font-weight: bold;">Women who create radiance at home and in the workplace.</i>
+            </p><p style="font-weight: bold; font-size: 28px;">held on</p>
+            <p style="font-weight: bold; color: rgb(28, 65, 65);"><br/> 4<sup>th</sup> SEPTEMBER 2025
+
+            AT HAL MANAGEMENT ACADEMY,BENGALURU- 560037</p>
+
+            <div class="signature">
+              <img
+                height="80px"
+                width="200px"
+                src="signature.png"
+                alt="signature-img"
+              />
+              <p> COORDINATOR</p>
+              <p>WIPS-HAL</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="instructions">
+        <h3>How to use:</h3>
+        <ol>
+          <li>Enter the name in the text field</li>
+          <li>Click "Generate Certificate" to update the certificate</li>
+          <li>Click "Download PDF" to save the certificate as a PDF file</li>
+          <li>Click "Reset" to clear the name and start over</li>
+        </ol>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,385 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.description {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  max-width: 600px;
+}
+
+.input-section {
+  width: 100%;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-group {
+  width: 100%;
+  max-width: 500px;
+  margin: 15px 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 18px;
+  transition: all 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+#generate-btn {
+  background-color: #3498db;
+}
+
+#generate-btn:hover {
+  background-color: #2980b9;
+}
+
+#download-btn {
+  background-color: #27ae60;
+}
+
+#download-btn:hover {
+  background-color: #219653;
+}
+
+#reset-btn {
+  background-color: #e74c3c;
+}
+
+#reset-btn:hover {
+  background-color: #c0392b;
+}
+
+.certificate-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.logo-setup {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content:space-between;
+  gap: 175px;
+}
+.certificate {
+  width: 100%;
+  max-width: 2000px;
+  background: white;
+  padding: 20px;
+  border: 20px solid #c9b184;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.certificate-content {
+  text-align: center;
+  border: 2px solid #c9b184;
+  padding: 20px 20px;
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.9);
+}
+/* background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.849)),
+          url("flight.png"); 
+
+          
+          background-image: url("flight.png");
+        background-position: center;
+        background-size: 100%;
+          */
+.certificate h2 {
+  font-size: 36px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.certificate h3 {
+  font-size: 24px;
+  color: #2c3e50;
+  margin: 20px 0;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.certificate p {
+  font-size: 18px;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.name {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 30px 0;
+  color: #2c3e50;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 2px;
+  min-height: 40px;
+}
+
+.signature {
+  margin-top: 60px;
+  text-align: right;
+  font-weight: bold;
+  
+}
+
+/* Flight Image Background */
+.flight-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flight-diagram {
+  width: 80%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.measurement-line {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #c9b184 10%,
+    #c9b184 90%,
+    transparent 100%
+  );
+  position: relative;
+}
+
+.measurement-marker {
+  position: absolute;
+  height: 10px;
+  width: 2px;
+  background-color: #c9b184;
+  top: px;
+}
+
+.measurement-label {
+  position: absolute;
+  color: #c9b184;
+  font-size: 14px;
+  font-weight: bold;
+  top: -25px;
+  transform: translateX(-50%);
+}
+
+.dimension-labels {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.dimension-label {
+  color: #c9b184;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.marker-0 {
+  left: 10%;
+}
+.marker-1 {
+  left: 30%;
+}
+.marker-2 {
+  left: 50%;
+}
+.marker-3 {
+  left: 70%;
+}
+.marker-4 {
+  left: 90%;
+}
+
+.label-0 {
+  left: 10%;
+}
+.label-1 {
+  left: 30%;
+  content: "4cm";
+}
+.label-2 {
+  left: 50%;
+  content: "0";
+}
+.label-3 {
+  left: 70%;
+  content: "1.00m";
+}
+.label-4 {
+  left: 90%;
+}
+
+.instructions {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.instructions h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.instructions ol {
+  margin-left: 20px;
+  line-height: 1.6;
+}
+
+.instructions li {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .certificate {
+    padding: 20px;
+    border-width: 10px;
+  }
+
+  .certificate h2 {
+    font-size: 28px;
+  }
+
+  .certificate h3 {
+    font-size: 20px;
+  }
+
+  .name {
+    font-size: 26px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .flight-diagram {
+    width: 90%;
+  }
+
+  .measurement-label,
+  .dimension-label {
+    font-size: 12px;
+  }
+}

@@ -421,26 +421,6 @@
         </div>
     </div>
 
-    <script>
-        // Add animation to input fields on focus
-        const inputs = document.querySelectorAll('input');
-        inputs.forEach(input => {
-            input.addEventListener('focus', () => {
-                input.parentElement.style.transform = 'scale(1.02)';
-                input.parentElement.style.zIndex = '10';
-            });
-            
-            input.addEventListener('blur', () => {
-                input.parentElement.style.transform = 'scale(1)';
-                input.parentElement.style.zIndex = '2';
-            });
-        });
-
-        // Add floating animation to the login box on load
-        document.addEventListener('DOMContentLoaded', () => {
-            const loginBox = document.querySelector('.login-box');
-            loginBox.style.animation = 'fadeIn 1s ease-out';
-        });
-    </script>
+   
 </body>
 </html>
